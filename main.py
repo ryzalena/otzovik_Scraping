@@ -14,7 +14,6 @@ def main():
             print("Скрапинг страницы №: %d" % (p + 1))
             html_text = requests.get(cur_url , headers={"User-Agent": user_agent}).text
             soup = BeautifulSoup(html_text, 'lxml')
-            info_max_page = soup.find('a', class_='pager-item last tooltip-top', href=True)
             print(soup)
             print('*******')
             ad = soup.find_all(class_='review-teaser').text
